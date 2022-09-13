@@ -31,16 +31,20 @@ class Server {
         // this.app.use(`/api/user/`, this.userController.router);
 
         console.log("successfully connected to database");
+        console.log("-----------------------------------");
       })
       .catch((error) => {
         console.log("failed connection with database", error);
+        console.log("-----------------------------------");
       });
   }
 
   public start() {
     this.app.listen(this.app.get("port"), () => {
       this.app.use(helmet());
+      console.log("-----------------------------------");
       console.log(`server is listening @ port: ${this.app.get("port")}`);
+      console.log("-----------------------------------");
     });
   }
 }
